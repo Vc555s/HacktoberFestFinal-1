@@ -36,8 +36,23 @@ class Solution(object):
         :type nums: List[int]
         :rtype: str
         """
-        
-        
+        if(len(nums)>3):
+            return None
+        if(nums[0]==nums[1]==nums[2]):
+            return "Equilateral"
+        elif((nums[0]==nums[1] or nums[0]==nums[2]) or (nums[1]==nums[0] or nums[1]==nums[2]) or (nums[2]==nums[1] or nums[2]== nums[0])):
+            return "Isoceles"
+        elif((nums[0]+nums[1]>nums[2]) and (nums[0]+nums[2]>nums[1]) and (nums[1]+nums[2]>nums[0])):
+            return 'Scalene'
+
+
+
+
+s=Solution()
+e1=[3,3,3]
+e2=[3,4,5]
+print(s.triangleType(e1))
+print(s.triangleType(e2))
         
         
         
