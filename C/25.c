@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdbool.h>
+
 // Valid Word
 
 // A word is considered valid if:
@@ -54,5 +59,50 @@
 // word consists of English uppercase and lowercase letters, digits, '@', '#', and '$'.
 
 bool isValid(char* word) {
+
+    if(strlen(word) < 3){
+
+        return false;
+    }
+
+    for(int i = 0; i < strlen(word); i++){
+
+        if(!isalnum(word[i])){
+
+            return false;
+        }
+
+    }
+
+    int hasonevowel = 0;
+    int hasoneconsontant = 0;
+
+    for(int i = 0; i < strlen(word); i++){
+
+        if(isalpha(word[i])){
+
+            if(word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'A' || word[i] == 'E', word[i] == 'E'|| word[i] == 'I'|| word[i] == 'U')
+                hasonevowel = 1;    // need || here accidentally added , cmon bayby
+            else
+                hasoneconsontant = 1;
+        }
+    }
+
+    if(hasoneconsontant == 1 && hasoneconsontant == 1)
+        return true;
     
+    return false;
+    
+}
+
+int main(){
+
+    char* test = "a3$e";
+
+    if(isValid(test))
+        printf("true");
+    else    
+        printf("false");
+
+    return 0;
 }
