@@ -47,6 +47,7 @@ char* triangleType(int* nums, int numsSize) {
 
 int main(){
     int nums[3], numsSize=3, i=0;
+    
     printf("Enter The Sides: \n");
     for(i=0; i<numsSize; i++){
         printf("Enter %d Side: ",i+1);
