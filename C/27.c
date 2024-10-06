@@ -30,7 +30,28 @@
 
 // nums.length == 3
 // 1 <= nums[i] <= 100
+#include<stdio.h>
 
 char* triangleType(int* nums, int numsSize) {
+    int i=0;
+    if(nums[0]==nums[1] && nums[2]==nums[1]){
+        printf("equilateral");
+    }
+    else if(nums[0]==nums[1] || nums[2]==nums[1] || nums[2]==nums[0]){
+        printf("isosceles");
+    }
+    else{
+        printf("scalene");
+    }
+}
+
+int main(){
+    int nums[3], numsSize=3, i=0;
     
+    printf("Enter The Sides: \n");
+    for(i=0; i<numsSize; i++){
+        printf("Enter %d Side: ",i+1);
+        scanf("%d",&nums[i]);
+    }
+    triangleType(nums, numsSize);
 }
