@@ -32,10 +32,18 @@ nums.length == 3
 '''
 class Solution(object):
     def triangleType(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: str
-        """
+        if nums[0]==nums[1]==nums[2]:
+            return "equilateral"
+        elif nums[0]==  nums[1] or nums[1]==nums[2] or nums[0]==nums[2]:
+            return "Isolateral"
+        elif nums[0] + nums[1] > nums[2] or nums[0] + nums[2] >nums[1] or nums[1] + nums[2] >nums[0] :
+            return "Scalene"
+        else :
+            return None
+
+a=Solution()
+print(a.triangleType([10,3,1]))
+       
         
         
         
