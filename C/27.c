@@ -31,6 +31,7 @@
 // nums.length == 3
 // 1 <= nums[i] <= 100
 #include<stdio.h>
+
 char* triangleType(int* nums, int numsSize) {
     int i=0;
     if(nums[0]==nums[1] && nums[2]==nums[1]){
