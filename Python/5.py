@@ -20,7 +20,7 @@ Output: "world hello"
 Explanation: Your reversed string should not contain leading or trailing spaces.
 Example 3:
 
-Input: s = "a good   example"
+Input: s = "a good example"
 Output: "example good a"
 Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
  
@@ -34,10 +34,20 @@ There is at least one word in s.
 '''
 class Solution(object):
     def reverseWords(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        self.s=s
+        s2=""
+        s1=[]
+        s3=""
+        s1=s.split()
+        s2=s1[::-1]
+        for i in s2:
+            s3=s3+" "+i
+            s3=s3.rstrip()
+        return s3    
+
+                 
+a=Solution()    
+print(a.reverseWords(" hello my name is ".lstrip()))
         
         
         
